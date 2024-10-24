@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EVENT DETAILS</h1>
+    <table border="8">
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+            <th>LOCATION</th>
+            <th>ORGANIZER</th>
+        </tr>
+        <tr>
+            {% for i in value %}
+            <td>{{i.title}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.organizer}}</td>
+            <td><a href="{% url 'uid' i.id %}">update</a></td>
+            <td><a href="{% url 'eid' i.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

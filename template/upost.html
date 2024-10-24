@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>UPDATE BOOK</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">title</label>
+        <input type="text" name="title" value="{{user.title}}" required> <br>
+        <label for="name" >contant</label>
+        <input type="text" name="contant" value="{{user.contant}}" required> <br>
+        <label for="name" >author</label>
+        <input type="text" name="author" value="{{user.author}}" required> <br>
+        <label for="create" >created at</label>
+        <input type="date" name="createdd" value="{{user.created_at |date:'Y-m-d'}}" required> <br>
+        <label for="update" >updated at</label>
+        <input type="date" name="updatedd"  value="{{user.updated_at|date:'Y-m-d'}}"> <br>
+        <button type="submit">update</button>
+    </form>
+</body>
+</html>

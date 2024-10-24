@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>UPDATE EVENT</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">TITLE</label>
+        <input type="text" name="title" value="{{value2.title}}"><br><br>
+        <label for="date">DATE</label>
+        <input type="date" name="date" value="{{value2.date |date:'Y-m-d'}}"><br><br>
+        <label for="place">LOCATION</label>
+        <input type="text" name="location" value="{{value2.location}}"><br><br>
+        <select name="id">
+            {% for i in value %}
+            <option value="{{i.id}}">{{i.name}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">UPDATE</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ADD CUSTMOR</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">firstname</label>
+        <input type="text" name="fname" value="{{user.fname}}" required> <br>
+        <label for="name" >lastname</label>
+        <input type="text" name="lname" value="{{user.lname}}" required> <br>
+        <label for="email" >email</label>
+        <input type="text" name="email" value="{{user.email}}" required> <br>
+        <label for="address" >address</label>
+        <input type="text" name="adress" value="{{user.address}}" required> <br>
+        <label for="dob" >dob</label>
+        <input type="date" name="dob" value="{{user.dob|date:'Y-m-d'}}"> <br>
+        <button type="submit">update</button>
+    </form>
+</body>
+</html>
